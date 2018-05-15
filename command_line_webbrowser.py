@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 import time
 
 print "Note : Prefix your URL with 'http' or 'https://' ..."
-url = str(input("Enter a Website Url :"))
+url = str(raw_input("Enter a Website Url :"))
 driver = webdriver.PhantomJS()
 driver.set_window_size(1600, 900)
 print "Opening The Url ..."
@@ -20,9 +20,10 @@ print '*'*77
 print "[*] Url loaded - " + url
 print '*'*77
 
-#action = []
-#form_name = []
+action = []
+form_name = []
 inpu = []
+change = 0
 html = driver.page_source
 soup = BeautifulSoup(html,'lxml')
 
@@ -48,8 +49,8 @@ def request_form():
     q = 0
     b = 0
     z = 0
-    action = []
-    form_name = []
+    #action = []
+    #form_name = []
     success = 0
     input_name = []
     input_id = []
@@ -62,6 +63,7 @@ def request_form():
         q+=1
         action.append(form.get_attribute('action'))
         form_name.append(form.get_attribute('name'))
+        change = 1
         print ('[{}]').format(q),'.',action[q-1],"-->",form_name[q-1]
     var = str(raw_input("Enter Your Input :"))
     q=0
@@ -107,6 +109,11 @@ def request_form():
                 break
         #if success!=1:
             #print "You Have not Entered Desried Input Kindly Check your Input.\nPlease Try Again Later ..."
+
+if change == 1:
+    action = []
+    form_name = []
+    change = 0
             
 def get_num_images():
     q=0
