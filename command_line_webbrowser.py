@@ -22,8 +22,6 @@ print '*'*77
 
 #action = []
 #form_name = []
-src = []
-img_name = []
 inpu = []
 html = driver.page_source
 soup = BeautifulSoup(html,'lxml')
@@ -119,6 +117,8 @@ def get_num_images():
     
 def get_detail_img():
     q=0
+    src = []
+    img_name = []
     imgs = driver.find_elements_by_tag_name('img')
     for img in imgs:
         q=q+1
