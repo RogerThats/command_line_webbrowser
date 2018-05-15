@@ -152,8 +152,9 @@ def choices():
         
     	get_num_forms();
     	get_num_images();
-    	print "[3.]GetallLinks within the Page"
-    	print "[4.]Take ScreenShot"
+    	print "[3.] GetallLinks within the Page"
+    	print "[4.] Take ScreenShot"
+        print "[5.] Clear The Screen ..."
 
     	print '*'*44
     	ins=int(input("Enter Your Input what you want to do: "))
