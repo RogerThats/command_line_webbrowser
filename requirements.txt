@@ -1,0 +1,6 @@
+selenium
+beautifulsoup4
+
+#Python3 Version is Needed
+#Geckodriver to be Installed into the PATH
+#Firefox Binary
